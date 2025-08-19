@@ -1,16 +1,147 @@
-# portfolio
+# 🌟 Hashini's Portfolio
 
-A new Flutter project.
+A modern, responsive portfolio website built with Flutter Web to showcase my journey as a developer.
 
-## Getting Started
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+![Web](https://img.shields.io/badge/Web-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+- **📱 Fully Responsive Design** - Optimized for all devices from mobile to desktop
+- **🎨 Modern UI/UX** - Clean, minimalistic design with smooth animations  
+- **⚡ Fast Performance** - Built with Flutter Web for optimal loading speeds
+- **🌐 Cross-Platform** - Works seamlessly across all browsers
+- **🎯 Interactive Elements** - Engaging user experience with smooth transitions
+- **📧 Contact Integration** - Easy ways to get in touch
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🚀 Live Demo
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[View Live Portfolio](https://your-portfolio-url.com) <!-- Replace with your actual URL -->
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Flutter Web
+- **Language:** Dart
+- **Styling:** Material Design & Custom UI Components
+- **State Management:** Provider/Riverpod <!-- Update based on what you're using -->
+- **Deployment:** Firebase Hosting <!-- Update based on your hosting -->
+- **Version Control:** Git & GitHub
+
+## 📂 Project Structure
+
+```
+lib/
+├── constants/            # App constants and configurations
+├── data/                 # Static data and content
+├── models/               # Data models
+│   ├── project/          # Project model      
+├── screens/              # Main application screens
+│   ├── portfolio_page/   # Portfolio page
+├── services/             # Services required
+│   ├── email_service/    # EmailJs email service
+├── portfolio_app/        # Portfolio main entry point
+└── main.dart             # Application entry point
+```
+
+## 🏃‍♂️ Getting Started
+
+### Prerequisites
+
+- Flutter (>=3.0.0)
+- Dart SDK
+- A web browser
+- Git
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/HashiniK/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   flutter pub get
+   ```
+
+3. **Enable Flutter Web** (if not already enabled)
+   ```bash
+   flutter config --enable-web
+   ```
+
+4. **Run the application**
+   ```bash
+   flutter run -d chrome
+   ```
+
+### Building for Production
+
+To build the web app for production:
+
+```bash
+flutter build web --release
+```
+
+The built files will be available in the `build/web` directory.
+
+## 🎨 Customization
+
+### Personalizing Content
+
+1. **Update personal information** in `lib/data/`
+2. **Add your projects** in `lib/models/project/`  
+3. **Modify colors and themes** in `lib/constants/`
+4. **Replace assets** in the `assets/` directory with your own images
+
+### Adding New Sections
+
+1. Create a new screen in `lib/screens/`
+2. Add the screen to your `lib/portfolio_app/`
+3. Update navigation and routing as needed
+
+## 📱 Responsive Design
+
+This portfolio is designed to work flawlessly across:
+
+- **🖥️ Desktop** (1200px+)
+- **💻 Laptop** (1024px - 1199px) 
+- **📱 Tablet** (768px - 1023px)
+- **📱 Mobile** (320px - 767px)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+1. **Fork the Project**
+2. **Create your Feature Branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit your Changes** (`git commit -m 'Add some AmazingFeature'`)
+4. **Push to the Branch** (`git push origin feature/AmazingFeature`)
+5. **Open a Pull Request**
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact
+
+**Hashini Kodithuwakku** - [hashini.kodithuwakku22@gmail.com](mailto:hashini.kodithuwakku22@gmail.com)
+
+- 💼 **LinkedIn:** [Hashini Kodithuwakku](https://www.linkedin.com/in/hashini-kodithuwakku-4254a51a6/)
+- 🐙 **GitHub:** [@HashiniK](https://github.com/HashiniK)
+- 📱 **Phone:** +94702393876
+- 📍 **Location:** Yakkala, Sri Lanka
+- 🌐 **Portfolio:** [Hashini](https://your-portfolio-url.com)
+
+## 🙏 Acknowledgments
+
+- Flutter team for the amazing framework
+- Material Design for the beautiful design system
+- Open source community for inspiration and resources
+
+---
+
+⭐ **Star this repository if you found it helpful!**
+
+*Built with ❤️ using Flutter*
