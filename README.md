@@ -32,16 +32,32 @@ A modern, responsive portfolio website built with Flutter Web to showcase my jou
 
 ```
 lib/
-├── constants/            # App constants and configurations
-├── data/                 # Static data and content
-├── models/               # Data models
-│   ├── project/          # Project model      
-├── screens/              # Main application screens
-│   ├── portfolio_page/   # Portfolio page
-├── services/             # Services required
-│   ├── email_service/    # EmailJs email service
-├── portfolio_app/        # Portfolio main entry point
-└── main.dart             # Application entry point
+├── constants/
+│   ├── constants.dart           ✅ All constants
+│   ├── app_colors.dart          ✅ Color scheme
+│   ├── app_styles.dart          ✅ Text styles & themes
+│   └── responsive_utils.dart    ✅ Responsive utilities
+├── data/
+│   └── project_data.dart        ✅ Featured & all projects data
+├── models/
+│       └── project.dart         ✅ Enhanced project model
+├── screens/
+│   ├── portfolio_page/
+│   │   ├── portfolio_page.dart  ✅ Updated main page
+│   │   └── widgets/             ✅ Individual widget files
+│   │       ├── about_section.dart      ✅ App's about section
+│   │       ├── contact_section.dart    ✅ App's contact section
+│   │       ├── experience_section.dart ✅ App's experience section
+│   │       ├── hero_section.dart       ✅ App's hero section
+│   │       ├── navigation_header.dart  ✅ App's navigation header
+│   │       ├── projects_section.dart   ✅ App's featured projects section
+│   │       └── sidebar.dart            ✅ App's about section
+│   └── projects_page/
+│       └── projects_page.dart   ✅ All projects page
+├── services/
+│       └── email_service.dart   ✅ Enhanced email service
+├── portfolio_app.dart           ✅ Main app entry
+└── main.dart                    ✅ App entry point
 ```
 
 ## 🏃‍♂️ Getting Started
