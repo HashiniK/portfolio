@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hashini_portfolio/screens/portfolio_page.dart';
 
+import 'constants/constants.dart';
+import 'constants/app_styles.dart';
+import 'screens/portfolio_page/portfolio_page.dart';
 
 class PortfolioApp extends StatelessWidget {
   const PortfolioApp({super.key});
@@ -8,23 +10,10 @@ class PortfolioApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hashini Kodithuwakku - Portfolio',
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
-        fontFamily: 'SF Mono',
-        scaffoldBackgroundColor: const Color(0xFF0A192F),
-        textTheme: const TextTheme(
-          displayLarge: TextStyle(fontFamily: 'Calibre', fontWeight: FontWeight.w600, color: Color(0xFFCCD6F6)),
-          displayMedium: TextStyle(fontFamily: 'Calibre', fontWeight: FontWeight.w600, color: Color(0xFFCCD6F6)),
-          headlineLarge: TextStyle(fontFamily: 'Calibre', fontWeight: FontWeight.w600, color: Color(0xFFCCD6F6)),
-          headlineMedium: TextStyle(fontFamily: 'Calibre', fontWeight: FontWeight.w500, color: Color(0xFFCCD6F6)),
-          bodyLarge: TextStyle(fontFamily: 'Calibre', height: 1.6, color: Color(0xFF8892B0)),
-          bodyMedium: TextStyle(fontFamily: 'Calibre', height: 1.6, color: Color(0xFF8892B0)),
-        ),
-      ),
+      title: AppConstants.appTitle,
+      theme: AppTheme.darkTheme,
       home: const PortfolioHomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
-
