@@ -24,7 +24,7 @@ class AboutSection extends StatelessWidget {
       children: [
         _buildSectionTitle(context),
         SizedBox(height: ResponsiveUtils.getVerticalSpacing(context)),
-        _buildProfileImage(context),
+        // _buildProfileImage(context),
         SizedBox(height: ResponsiveUtils.getVerticalSpacing(context)),
         _buildAboutContent(context),
       ],
@@ -47,7 +47,6 @@ class AboutSection extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 100),
-        Expanded(flex: 2, child: _buildProfileImage(context)),
       ],
     );
   }
@@ -135,44 +134,4 @@ class AboutSection extends StatelessWidget {
     );
   }
 
-  Widget _buildProfileImage(BuildContext context) {
-    final size = ResponsiveUtils.getProfileImageSize(context);
-    final offset = ResponsiveUtils.getProfileImageOffset(context);
-
-    return SizedBox(
-      width: size,
-      height: size,
-      child: Stack(
-        children: [
-          Positioned(
-            top: offset,
-            left: offset,
-            child: Container(
-              width: size - offset,
-              height: size - offset,
-              decoration: AppDecorations.profileImageBorder,
-            ),
-          ),
-          Container(
-            width: size - offset,
-            height: size - offset,
-            decoration: AppDecorations.profileImageDecoration,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(4),
-              child:  ColorFiltered(
-                colorFilter: ColorFilter.mode(
-                  AppColors.imageOverlay,
-                  BlendMode.multiply,
-                ),
-                child: Image(
-                  image: AssetImage('assets/images/profile.jpg'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }
