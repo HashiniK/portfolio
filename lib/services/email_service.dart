@@ -17,6 +17,31 @@ class EmailConfig {
   );
   static const String emailJsUrl =
       'https://api.emailjs.com/api/v1.0/email/send';
+
+  /// Debug method to help troubleshoot configuration issues
+  static void printConfig() {
+    print('=== EmailJS Configuration Debug ===');
+    print('ServiceId: ${serviceId.isNotEmpty ? "✓ Set (${serviceId.length} chars)" : "✗ Missing/Empty"}');
+    print('TemplateId: ${templateId.isNotEmpty ? "✓ Set (${templateId.length} chars)" : "✗ Missing/Empty"}');
+    print('PublicKey: ${publicKey.isNotEmpty ? "✓ Set (${publicKey.length} chars)" : "✗ Missing/Empty"}');
+    print('EmailJS URL: $emailJsUrl');
+    print('================================');
+  }
+
+  /// Get detailed configuration status
+  static String getConfigStatus() {
+    final missingConfigs = <String>[];
+
+    if (serviceId.isEmpty) missingConfigs.add('ServiceId');
+    if (templateId.isEmpty) missingConfigs.add('TemplateId');
+    if (publicKey.isEmpty) missingConfigs.add('PublicKey');
+
+    if (missingConfigs.isEmpty) {
+      return 'All configuration values are set ✓';
+    } else {
+      return 'Missing configuration: ${missingConfigs.join(', ')}';
+    }
+  }
 }
 
 class EmailRequest {
@@ -106,17 +131,19 @@ class EmailService {
 
       // Check if configuration is available
       if (!_isConfigurationValid()) {
+        // Print debug info in development
+        EmailConfig.printConfig();
         return EmailResponse.failure(
-          message: 'Email service not configured properly',
+          message: 'Email service not configured properly. ${EmailConfig.getConfigStatus()}',
         );
       }
 
       final response = await http
           .post(
-            Uri.parse(EmailConfig.emailJsUrl),
-            headers: {'Content-Type': 'application/json'},
-            body: json.encode(request.toEmailJsPayload()),
-          )
+        Uri.parse(EmailConfig.emailJsUrl),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode(request.toEmailJsPayload()),
+      )
           .timeout(_timeout);
 
       if (response.statusCode == 200) {
@@ -132,11 +159,19 @@ class EmailService {
     }
   }
 
-  /// Check if EmailJS configuration is valid
+  /// Check if EmailJS configuration is valid with improved debugging
   static bool _isConfigurationValid() {
-    return EmailConfig.serviceId.isNotEmpty &&
+    final isValid = EmailConfig.serviceId.isNotEmpty &&
         EmailConfig.templateId.isNotEmpty &&
         EmailConfig.publicKey.isNotEmpty;
+
+    // In debug mode or development, print config status
+    if (!isValid) {
+      print('EmailJS Configuration Invalid:');
+      print(EmailConfig.getConfigStatus());
+    }
+
+    return isValid;
   }
 
   /// Get user-friendly error message
@@ -150,8 +185,15 @@ class EmailService {
     }
   }
 
-  /// Test email service configuration
+  /// Test email service configuration - now with detailed feedback
   static Future<bool> testConfiguration() async {
+    print('Testing EmailJS Configuration...');
+    EmailConfig.printConfig();
     return _isConfigurationValid();
+  }
+
+  /// New method: Get configuration status for UI
+  static String getConfigurationStatus() {
+    return EmailConfig.getConfigStatus();
   }
 }

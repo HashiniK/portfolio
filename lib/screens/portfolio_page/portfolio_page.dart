@@ -431,9 +431,21 @@ class _PortfolioHomePageState extends State<PortfolioHomePage>
     TextEditingController emailController,
     TextEditingController messageController,
   ) async {
+    debugPrint('Testing EmailJS config...');
+    await EmailService.testConfiguration();
+
     final name = nameController.text.trim();
     final email = emailController.text.trim();
     final message = messageController.text.trim();
+
+    // Show loading indicator
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => const Center(
+        child: CircularProgressIndicator(color: AppColors.primary),
+      ),
+    );
 
     try {
       final response = await EmailService.sendEmail(
@@ -442,7 +454,11 @@ class _PortfolioHomePageState extends State<PortfolioHomePage>
         message: message,
       );
 
+      // Close loading dialog
+      Navigator.pop(context);
+
       if (response.success) {
+        // Close contact dialog
         Navigator.pop(context);
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
@@ -452,6 +468,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage>
             backgroundColor: AppColors.success,
           ),
         );
+        // Clear form
         nameController.clear();
         emailController.clear();
         messageController.clear();
@@ -464,9 +481,11 @@ class _PortfolioHomePageState extends State<PortfolioHomePage>
         );
       }
     } catch (e) {
+      // Close loading dialog
+      Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Failed to send message. Please try again.'),
+        SnackBar(
+          content: Text('Failed to send message: ${e.toString()}'),
           backgroundColor: AppColors.error,
         ),
       );
