@@ -183,9 +183,9 @@ class ProjectsSection extends StatelessWidget {
         color: AppColors.surfaceOverlay,
         borderRadius: BorderRadius.circular(4),
       ),
-      child: const Center(
-        child: Icon(Icons.web, color: AppColors.primary, size: 80),
-      ),
+      // child: const Center(
+      //   child: Icon(Icons.web, color: AppColors.primary, size: 80),
+      // ),
     );
   }
 
