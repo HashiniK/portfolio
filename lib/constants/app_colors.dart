@@ -18,10 +18,10 @@ class AppColors {
   static const Color disabled = Color(0xFF5A6B8A);
 
   // Status Colors
-  static const Color success = Colors.green;
-  static const Color error = Colors.red;
-  static const Color warning = Colors.orange;
-  static const Color info = Colors.blue;
+  static const Color success = Color(0xFF0A192F);
+  static Color error = Colors.red[100]!;
+  static Color warning = Colors.orange[100]!;
+  static Color info = Colors.blue[300]!;
 
   // Overlay Colors
   static Color overlay = Colors.black.withOpacity(0.8);

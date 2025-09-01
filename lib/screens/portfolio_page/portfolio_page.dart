@@ -295,7 +295,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage>
   void _handleResumePressed() {
     // TODO: Implement resume download logic
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
+      SnackBar(
         content: Text('Resume download will be implemented soon!'),
         backgroundColor: AppColors.info,
       ),
@@ -461,9 +461,10 @@ class _PortfolioHomePageState extends State<PortfolioHomePage>
         // Close contact dialog
         Navigator.pop(context);
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
+          SnackBar(
             content: Text(
               'Message sent successfully! I\'ll get back to you soon.',
+              style: AppTextStyles.caption(context),
             ),
             backgroundColor: AppColors.success,
           ),
