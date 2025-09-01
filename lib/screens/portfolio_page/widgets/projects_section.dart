@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants/app_colors.dart';
-import '../../../constants/constants.dart';
-import '../../../constants/app_styles.dart';
-import '../../../constants/responsive_utils.dart';
-import '../../../models/project.dart';
+import 'package:hashini_portfolio/models/project.dart';
+import 'package:hashini_portfolio/constants/constants.dart';
+import 'package:hashini_portfolio/constants/app_colors.dart';
+import 'package:hashini_portfolio/constants/app_styles.dart';
+import 'package:hashini_portfolio/constants/responsive_utils.dart';
 
 class ProjectsSection extends StatelessWidget {
   final List<Project> featuredProjects;

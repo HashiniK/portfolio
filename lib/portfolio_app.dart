@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'constants/constants.dart';
-import 'constants/app_styles.dart';
-import 'screens/portfolio_page/portfolio_page.dart';
+import 'package:hashini_portfolio/constants/constants.dart';
+import 'package:hashini_portfolio/constants/app_styles.dart';
+import 'package:hashini_portfolio/screens/portfolio_page/portfolio_page.dart';
 
 class PortfolioApp extends StatelessWidget {
   const PortfolioApp({super.key});

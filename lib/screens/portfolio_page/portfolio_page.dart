@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:hashini_portfolio/services/email_service.dart';
+import 'package:hashini_portfolio/data/project_data.dart';
 import 'package:hashini_portfolio/constants/constants.dart';
-import 'package:hashini_portfolio/constants/responsive_utils.dart';
 import 'package:hashini_portfolio/constants/app_colors.dart';
 import 'package:hashini_portfolio/constants/app_styles.dart';
-import 'package:hashini_portfolio/data/project_data.dart';
 import 'package:hashini_portfolio/screens/projects_page.dart';
+import 'package:hashini_portfolio/services/email_service.dart';
+import 'package:hashini_portfolio/constants/responsive_utils.dart';
 
+import 'widgets/sidebar.dart';
+import 'widgets/hero_section.dart';
 import 'widgets/about_section.dart';
 import 'widgets/contact_section.dart';
-import 'widgets/experience_section.dart';
-import 'widgets/hero_section.dart';
-import 'widgets/navigation_header.dart';
 import 'widgets/projects_section.dart';
-import 'widgets/sidebar.dart';
+import 'widgets/navigation_header.dart';
+import 'widgets/experience_section.dart';
 
 class PortfolioHomePage extends StatefulWidget {
   const PortfolioHomePage({super.key});

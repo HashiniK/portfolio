@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants/app_colors.dart';
-import '../../../constants/constants.dart';
-import '../../../constants/app_styles.dart';
+import 'package:hashini_portfolio/constants/constants.dart';
+import 'package:hashini_portfolio/constants/app_colors.dart';
+import 'package:hashini_portfolio/constants/app_styles.dart';
 
 class Sidebar {
   static Widget left({required Function(String) onSocialPressed}) {

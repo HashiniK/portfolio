@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hashini_portfolio/models/project.dart';
+import 'package:hashini_portfolio/data/project_data.dart';
 import 'package:hashini_portfolio/constants/constants.dart';
 import 'package:hashini_portfolio/constants/app_colors.dart';
 import 'package:hashini_portfolio/constants/app_styles.dart';
 import 'package:hashini_portfolio/constants/responsive_utils.dart';
-import 'package:hashini_portfolio/models/project.dart';
-import 'package:hashini_portfolio/data/project_data.dart';
 
 class AllProjectsPage extends StatefulWidget {
   final List<Project> allProjects;
