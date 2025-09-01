@@ -3,10 +3,10 @@ name: Deploy Flutter Web to GitHub Pages
 on:
   push:
     branches: [ master ]
-  workflow_dispatch:  # Allows manual triggering
+  workflow_dispatch:
 
 permissions:
-  contents: write  # Needed for gh-pages deployment
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
@@ -31,11 +33,12 @@ jobs:
             --dart-define=ServiceId=${{ secrets.SERVICE_ID }} \
             --dart-define=TemplateId=${{ secrets.TEMPLATE_ID }} \
             --dart-define=PublicKey=${{ secrets.PUBLIC_KEY }} \
-            --release
+            --release \
+            --base-href "/portfolio/"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/web
-          force_orphan: true  # Clean up gh-pages branch history
+          force_orphan: true
