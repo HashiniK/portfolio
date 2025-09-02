@@ -70,10 +70,10 @@ class AppConstants {
 
   // Technologies List
   static const List<String> technologies = [
+    'Flutter',
     'JavaScript (ES6+)',
     'React',
     'Node.js',
-    'Flutter',
     'Python',
     'Firebase',
   ];
